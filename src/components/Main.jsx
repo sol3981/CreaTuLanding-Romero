@@ -1,10 +1,22 @@
-export function Main (){
+import {Routes, Route} from "react-router-dom"
+import { Home } from "./Home"
+import { ItemListConteiner } from "./ItemListConteiner"
+import { Item } from "./Item.jsx"
+import { CartWidget } from "./CartWidget.jsx"
+import { ItemDetailConteiner } from "./ItemDetailContainer.jsx"
+
+
+export function Main ({name}){
   return (
-    <main className="conteiner d-flex justify-content-center">
-      <div id ="main-text"className="text-align-center justify-content-center">    
-       <h1 className="title-text">Viví lo lindo de la Patagonia</h1>
-       <p className="sub-text">EL BOLSÓN | RÍO NEGRO | PATAGONIA</p>
-      </div>
+    <main className="contMain container-fluid">
+     <Routes>
+      <Route path="/"  element= {<Home/>}  />      
+      <Route path="/categoria/:categoria"  element= {<ItemListConteiner/>} />
+      <Route path ="/carrito" element= {<CartWidget />} />      
+      <Route path ="/productos/:id" element= {<ItemDetailConteiner />} />
+      <Route path ="/item/:id" element= {<Item />} />
+            
+     </Routes>
 
       
       

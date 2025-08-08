@@ -1,31 +1,18 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+import { BrowserRouter } from "react-router-dom";
 import {App} from './App.jsx'
+import { CustomCartProvider } from './components/CartProvider.jsx';
+import './index.css'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+     <BrowserRouter>
+     <CustomCartProvider>
+       <App />
+     </CustomCartProvider>
+     </BrowserRouter>    
   </StrictMode>,
 )
    
-export function Main(){
-
-  return(<main>
-    <div>
-      <h1>Bienvenidos a <br />
-         Cabañas del Sur
-        </h1>
-    </div>
-
-
-
-
-  </main>
-
-
-
-
-  )
-
-}
