@@ -4,6 +4,8 @@ import { ItemListConteiner } from "./ItemListConteiner"
 import { Item } from "./Item.jsx"
 import { CartWidget } from "./CartWidget.jsx"
 import { ItemDetailConteiner } from "./ItemDetailContainer.jsx"
+import { Footer } from "./Footer.jsx"
+import { CheckoutForm } from "./Checkoutform.jsx"
 
 
 export function Main ({name}){
@@ -15,8 +17,11 @@ export function Main ({name}){
       <Route path ="/carrito" element= {<CartWidget />} />      
       <Route path ="/productos/:id" element= {<ItemDetailConteiner />} />
       <Route path ="/item/:id" element= {<Item />} />
+      <Route path ="/compra" element ={<CheckoutForm />}/>
             
      </Routes>
+
+     
 
       
       

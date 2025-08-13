@@ -2,6 +2,7 @@ import { Header } from "./components/Header.jsx"
 import {Main} from "./components/Main.jsx"
 import { Footer } from "./components/Footer.jsx"
 
+
  
  
  
@@ -11,14 +12,21 @@ import { Footer } from "./components/Footer.jsx"
    
 
     return (
-      <>
+      <> 
+      
         <Header name ={name}/>        
-        <Main />
-        <Footer />
+        <main className="main-content" >
+          <Main/>
+        </main>
+        <footer>
+          <Footer/>
+        </footer>
+        
+      </>
                 
       
       
-      </>
+      
         
         
 

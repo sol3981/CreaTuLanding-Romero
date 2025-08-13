@@ -5,14 +5,18 @@ import { CartContext } from './CartProvider';
 
 export function Item({producto}) { 
     
-    const [cantidad, setCantidad] = useState(0);      
-    const resultado = useContext (CartContext);
+    const [cantidadLocal, setCantidadLocal] = useState(0);      
+    const {handleAgregarAlCarrito, carrito} = useContext(CartContext);
+
+    const productoEnCarrito = carrito.find(item=> item.id == producto.id);
+    const cantidadEnCarrito = productoEnCarrito ? productoEnCarrito.cantidad : 0;
 
     const handleClick = () => {
-        const nuevaCantidad = cantidad + 1;
-        setCantidad(nuevaCantidad);
-        resultado.setCantidad(nuevaCantidad);
-    }
+       handleAgregarAlCarrito(producto);
+       const nuevaCantidadLocal = cantidadLocal +1;
+       setCantidadLocal(nuevaCantidadLocal);
+       alert (`${producto.nombre} agregado al carrito!`);
+    };
 
    
 
@@ -24,7 +28,8 @@ export function Item({producto}) {
             <img src={producto.imagen} alt={producto.nombre} width="100" />
             <br />
             <Link to={`/productos/${producto.id}`} className="nav-link">Ver Detalles</Link>
-            <Link to ="/carrito"><button onClick={handleClick} className="nav-link"><Plus/>Agregar al Carrito{cantidad > 0 && `(${cantidad})`}</button></Link>        </article>           
+            <button onClick={handleClick} className="nav-link"><Plus/>Agregar al Carrito{cantidadEnCarrito > 0 && `(${cantidadEnCarrito})`}</button>    
+        </article>           
                                                    
                             
         
