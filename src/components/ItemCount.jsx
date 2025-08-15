@@ -4,6 +4,19 @@ import { Link } from "react-router-dom";
 import { CartContext } from './CartProvider';
 
 export function ItemCount() {
+    
+    const [cantidadLocal, setCantidadLocal] = useState(0);      
+    const {handleAgregarAlCarrito, carrito} = useContext(CartContext);
+
+    const productoEnCarrito = carrito.find(item=> item.id == producto.id);
+    const cantidadEnCarrito = productoEnCarrito ? productoEnCarrito.cantidad : 0;
+
+    const handleClick = () => {
+       handleAgregarAlCarrito(producto);
+       const nuevaCantidadLocal = cantidadLocal +1;
+       setCantidadLocal(nuevaCantidadLocal);
+       alert (`${producto.nombre} agregado al carrito!`);
+    };
 
     const [cantidad, setCantidad] = useState(1);
     const resultado = useContext(CartContext);
@@ -18,9 +31,7 @@ export function ItemCount() {
         }
     };
 
-    const handleClick = () => {
-        resultado.setCantidad(cantidad);
-    };
+    
     
 
 

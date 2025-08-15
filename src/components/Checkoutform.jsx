@@ -33,17 +33,17 @@ export function CheckoutForm({ onSendForm }) {
             apellido: formData.apellido,
             telefono: formData.telefono,
             email: formData.email,
-            carrito: [], // Aquí deberías pasar el carrito real
+            carrito: [], 
             fecha: new Date().toISOString(),
         });
 
         elPedido
             .then((respuesta) => {
                 console.log(respuesta.id);
-                // Aquí agregamos el alert
+                
                 alert("¡Gracias por su compra!");
                 
-                // Opcional: limpiar el formulario después de la compra
+                
                 setFormData({
                     nombre: '',
                     apellido: '',

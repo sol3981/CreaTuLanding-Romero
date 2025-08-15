@@ -1,7 +1,8 @@
 import { Truck, Package } from 'lucide-react';
 import { ItemCount } from './ItemCount';
 
-export function ItemDetail({ producto }) {     
+export function ItemDetail({ producto }) { 
+        
 
     return (           
         <article className="detalle-container">

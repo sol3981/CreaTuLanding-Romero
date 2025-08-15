@@ -33,7 +33,10 @@ export function ItemDetailConteiner() {
                                 
                 if (respuesta.exists()) {
                     const data = respuesta.data();
-                    setProducto(data);
+                    setProducto({
+                        ...data,
+                       id: respuesta.id 
+                    });
                 } else {
                     console.log("No se encontró el producto");
                     setError("Producto no encontrado");
@@ -42,6 +45,7 @@ export function ItemDetailConteiner() {
                 
             })       
             .catch((error) => {
+                
                setError("Error al cargar el producto");
                 setLoading(false);
             });

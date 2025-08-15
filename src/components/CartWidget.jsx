@@ -26,7 +26,7 @@ export function CartWidget () {
             <div className="cart-container">
                 <h2>Carrito de Compras</h2>
                 <p>Tu carrito está Vacío</p>
-                <Link to="/productos" className="nav-link">Continuar Comprando</Link>
+                <Link to="/" className="nav-link">Continuar Comprando</Link>
             </div>
         );
     }

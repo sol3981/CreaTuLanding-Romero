@@ -22,13 +22,15 @@ export function Item({producto}) {
 
     return (
            
-        <article>
-            <h3>{producto.nombre}</h3>
-            <p className="subText">Precio: {Intl.NumberFormat("es-AR" , {style: "currency", currency: "ARS"}).format(producto.precio)}</p>                     
-            <img src={producto.imagen} alt={producto.nombre} width="100" />
-            <br />
-            <Link to={`/productos/${producto.id}`} className="nav-link">Ver Detalles</Link>
-            <button onClick={handleClick} className="nav-link"><Plus/>Agregar al Carrito{cantidadEnCarrito > 0 && `(${cantidadEnCarrito})`}</button>    
+        <article >
+            <div className="home-container">
+              <h3 className='titleText name-product'>{producto.nombre}</h3>
+              <p className="subText">Precio: {Intl.NumberFormat("es-AR" , {style: "currency", currency: "ARS"}).format(producto.precio)}</p>                     
+              <img src={producto.imagen} alt={producto.nombre} width="350"  />
+              <br />
+              <Link to={`/productos/${producto.id}`} className="nav-link">Ver Detalles</Link> <br />
+              <button onClick={handleClick} className="nav-link" ><Plus/>Agregar al Carrito{cantidadEnCarrito > 0 && `(${cantidadEnCarrito})`}</button>  
+            </div>  
         </article>           
                                                    
                             
