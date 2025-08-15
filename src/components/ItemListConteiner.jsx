@@ -22,7 +22,12 @@ export function ItemListConteiner() {
                 const productosFinales = []
 
                 res.docs.forEach((producto)=>{
-                    productosFinales.push(producto.data())
+                    const finalProduct ={
+                        id: producto.id,
+                        ...producto.data()
+                    }
+
+                    productosFinales.push(finalProduct)
 
                 })
 
@@ -87,7 +92,7 @@ export function ItemListConteiner() {
             <h2 className="titleText">Nuestros Productos</h2>
             {productos.map((producto, indice) => {
                 return(
-                    <Item key={indice} style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }} producto = {producto}/>
+                    <Item key={producto.id} style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }} producto = {producto}/>
                 )
                 
             })}
