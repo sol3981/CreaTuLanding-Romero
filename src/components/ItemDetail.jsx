@@ -42,7 +42,7 @@ export function ItemDetail({ producto }) {
                 </ul>
             </div>
 
-            <ItemCount></ItemCount>
+            <ItemCount producto={producto}/>
 
           
         </article>                                                         

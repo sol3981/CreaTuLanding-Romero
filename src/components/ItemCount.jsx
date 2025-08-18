@@ -3,7 +3,7 @@ import { useContext, useState } from 'react';
 import { Link } from "react-router-dom";
 import { CartContext } from './CartProvider';
 
-export function ItemCount() {
+export function ItemCount({producto}) {
     
     const [cantidadLocal, setCantidadLocal] = useState(0);      
     const {handleAgregarAlCarrito, carrito} = useContext(CartContext);
