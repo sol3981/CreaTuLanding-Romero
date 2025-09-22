@@ -89,7 +89,7 @@ export function ItemListConteiner() {
     
     return (
         <div>
-            <h2 className="titleText">Nuestros Productos</h2>
+            <h2 className="subText">Nuestros Productos</h2>
             {productos.map((producto, indice) => {
                 return(
                     <Item key={producto.id} style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }} producto = {producto}/>
